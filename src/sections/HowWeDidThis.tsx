@@ -259,16 +259,16 @@ function Arrow() {
   return <span className="text-primary/30 text-lg font-bold flex-shrink-0">→</span>;
 }
 
-function StatusBadge({ status }: { status: "partial" | "absent" | "risk" }) {
-  const styles = {
-    partial: "bg-amber-100 text-amber-800 border-amber-200",
-    absent: "bg-red-100 text-red-800 border-red-200",
-    risk: "bg-orange-100 text-orange-800 border-orange-200",
-  };
-  const labels = { partial: "Partial", absent: "Absent", risk: "At Risk" };
-  return (
-    <span className={`inline-block border px-2 py-0.5 font-mono text-[10px] font-bold uppercase ${styles[status]}`}>
-      {labels[status]}
-    </span>
-  );
-}
+// function StatusBadge({ status }: { status: "partial" | "absent" | "risk" }) {
+//   const styles = {
+//     partial: "bg-amber-100 text-amber-800 border-amber-200",
+//     absent: "bg-red-100 text-red-800 border-red-200",
+//     risk: "bg-orange-100 text-orange-800 border-orange-200",
+//   };
+//   const labels = { partial: "Partial", absent: "Absent", risk: "At Risk" };
+//   return (
+//     <span className={`inline-block border px-2 py-0.5 font-mono text-[10px] font-bold uppercase ${styles[status]}`}>
+//       {labels[status]}
+//     </span>
+//   );
+// }
