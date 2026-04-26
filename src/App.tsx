@@ -1,10 +1,10 @@
 import React, { useState } from "react"
 import { Separator } from "@/components/ui/separator"
 import { useScrollSpy } from "@/components/ScrollSpy"
-import { InteractiveMap } from "@/components/InteractiveMap"
+import { MapHeader } from "@/components/MapHeader"
 import {
   Globe2, Book, Zap, MapPin, BarChart3, Droplet, GitBranch,
-  AlertTriangle, Globe, Wrench, CheckCircle2, Map, LayoutDashboard,
+  AlertTriangle, Globe, Wrench, CheckCircle2, LayoutDashboard,
 } from "lucide-react"
 
 import { Hero } from "./sections/Hero"
@@ -38,7 +38,6 @@ const articleSections = [
 
 export default function App() {
   const [view, setView] = useState<ViewMode>("article")
-  const [showMap, setShowMap] = useState(false)
   const activeId = useScrollSpy(articleSections.map(s => s.id))
 
   const scrollTo = (id: string) => {
@@ -48,8 +47,6 @@ export default function App() {
 
   return (
     <>
-      {/* Map overlay */}
-      {showMap && <InteractiveMap onClose={() => setShowMap(false)} />}
 
       <div className="min-h-screen bg-background flex flex-col md:flex-row text-foreground selection:bg-primary selection:text-primary-foreground font-sans">
 
@@ -81,16 +78,7 @@ export default function App() {
             />
           </div>
 
-          {/* Map Button */}
-          <div className="px-4 pt-4">
-            <button
-              onClick={() => setShowMap(true)}
-              className="w-full flex items-center gap-2.5 px-3 py-2.5 bg-[#0a1628] text-white font-sans text-sm font-semibold hover:bg-[#0d1b30] transition-colors cursor-pointer"
-            >
-              <Map className="w-4 h-4 text-cyan-400" />
-              <span>Infrastructure Map</span>
-            </button>
-          </div>
+
 
           {/* Section Nav (only for article view) */}
           {view === "article" && (
@@ -140,30 +128,36 @@ export default function App() {
         </aside>
 
         {/* ─── Main Content ─── */}
-        <main className="flex-1 flex justify-center py-12 px-6 lg:px-12 bg-background overflow-y-auto">
+        <main className="flex-1 flex flex-col bg-background overflow-y-auto">
           {view === "article" ? (
-            <div className="max-w-4xl w-full">
-              <Hero />
-              <TheProblem />
-              <FourStates />
-              <ReadinessScores />
-              <EnvironmentalImpact />
-              <GroundwaterCrisis />
-              <CausalAnalysis />
-              <TippingPoints />
-              <NationalPicture />
-              <HowWeDidThis />
-              <Conclusions />
+            <>
+              {/* Interactive map hero — full bleed */}
+              <MapHeader />
 
-              <Separator className="bg-primary/10 mb-8 mt-16" />
-              <footer className="flex flex-wrap gap-4 text-sm font-mono text-primary/60 mb-12">
-                <span>© 2026 Manas V. S. Ravulapalli & Abhinav M. Hari</span>
-                <span className="text-primary/20">·</span>
-                <span>Department of Computer Science, Ashoka University</span>
-              </footer>
-            </div>
+              {/* Article body */}
+              <div className="max-w-4xl w-full mx-auto py-12 px-6 lg:px-12">
+                <Hero />
+                <TheProblem />
+                <FourStates />
+                <ReadinessScores />
+                <EnvironmentalImpact />
+                <GroundwaterCrisis />
+                <CausalAnalysis />
+                <TippingPoints />
+                <NationalPicture />
+                <HowWeDidThis />
+                <Conclusions />
+
+                <Separator className="bg-primary/10 mb-8 mt-16" />
+                <footer className="flex flex-wrap gap-4 text-sm font-mono text-primary/60 mb-12">
+                  <span>© 2026 Manas V. S. Ravulapalli & Abhinav M. Hari</span>
+                  <span className="text-primary/20">·</span>
+                  <span>Department of Computer Science, Ashoka University</span>
+                </footer>
+              </div>
+            </>
           ) : (
-            <div className="w-full">
+            <div className="w-full py-12 px-6 lg:px-12">
               <Dashboard />
             </div>
           )}
