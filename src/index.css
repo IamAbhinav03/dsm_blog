@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 20% 98%; /* #f8f9fa */
+    --foreground: 200 8% 11%; /* #191c1d */
+
+    --card: 0 0% 100%; /* #ffffff */
+    --card-foreground: 200 8% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 200 8% 11%;
+
+    --primary: 209 82% 8%; /* #041627 */
+    --primary-foreground: 0 0% 100%; /* #ffffff */
+
+    --secondary: 150 100% 21%; /* #006d37 */
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 210 14% 96%; /* #f3f4f5 */
+    --muted-foreground: 216 6% 28%; /* #44474c */
+
+    --accent: 210 14% 96%;
+    --accent-foreground: 200 8% 11%;
+
+    --destructive: 0 75% 42%; /* #ba1a1a */
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 214 6% 80%; /* #c4c6cd */
+    --input: 214 6% 80%;
+    --ring: 209 82% 8%;
+
+    --radius: 0px;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+}
+
+/* Collapsible animation */
+.collapsible-content {
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+}
+.collapsible-content[data-open="false"] {
+  max-height: 0;
+  opacity: 0;
+}
+.collapsible-content[data-open="true"] {
+  max-height: 4000px;
+  opacity: 1;
+}
+
+/* Custom scrollbar for sidebar */
+.toc-sidebar::-webkit-scrollbar {
+  width: 3px;
+}
+.toc-sidebar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.toc-sidebar::-webkit-scrollbar-thumb {
+  background: hsl(var(--primary) / 0.15);
+}
+
+/* Smooth fade-in for sections */
+.section-fade {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.section-fade.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
