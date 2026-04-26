@@ -45,16 +45,18 @@ export function TheProblem() {
       <p className="text-lg font-serif leading-loose mb-6 text-foreground/90">
         This research addresses that gap directly. We built a computational pipeline that integrates four 
         independent government datasets — air quality, groundwater levels, electricity generation, and 
-        renewable capacity — into a single analytical framework. The pipeline trains seven different types 
-        of models, runs ten analysis modules, and produces concrete, quantitative answers to the question: 
+        renewable capacity — alongside a scraped news corpus analysed for industry sentiment, into a 
+        single analytical framework. The pipeline trains nine different types of models, runs ten analysis 
+        modules, and produces concrete, quantitative answers to the question: 
         <strong className="text-primary">at what point does adding more data center capacity push a state's 
         resources past the point of no return?</strong>
       </p>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
         <StatCard value="4" label="Government datasets integrated" />
-        <StatCard value="7" label="Model architectures deployed" />
+        <StatCard value="9" label="Model architectures deployed" />
         <StatCard value="~35" label="CSV artifacts per pipeline run" />
+        <StatCard value="40+" label="Figures generated" />
       </div>
     </section>
   );

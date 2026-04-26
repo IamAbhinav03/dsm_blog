@@ -55,12 +55,13 @@ export function Conclusions() {
       </div>
 
       <p className="text-lg font-serif leading-loose mb-8 text-foreground/90">
-        This pipeline integrates four independent government datasets, trains seven model architectures 
-        across ten modules, runs nine analysis modules, and produces readiness scores, environmental impact 
-        calculations, time-series forecasts, causal effect estimates, Monte Carlo stability distributions, 
-        scenario simulations, and a long-horizon groundwater projection to 2070. The resulting system is 
-        technically comprehensive — but two critical risks must be resolved before it's suitable for 
-        actual policy decisions.
+        This pipeline integrates four independent government datasets and a scraped news corpus, trains
+        nine model architectures (including VADER and DistilBERT sentiment analysers) across ten modules,
+        runs nine analysis modules, and produces readiness scores, environmental impact calculations,
+        time-series forecasts, causal effect estimates, Monte Carlo stability distributions, scenario
+        simulations, sentiment analyses, and a long-horizon groundwater projection to 2070. The resulting
+        system is technically comprehensive — but two critical risks must be resolved before it's suitable
+        for actual policy decisions.
       </p>
 
       {/* Key Strategic Findings */}

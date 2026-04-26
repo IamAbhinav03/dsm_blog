@@ -4,7 +4,7 @@ import { useScrollSpy } from "@/components/ScrollSpy"
 import { MapHeader } from "@/components/MapHeader"
 import {
   Globe2, Book, Zap, MapPin, BarChart3, Droplet, GitBranch,
-  AlertTriangle, Globe, Wrench, CheckCircle2, LayoutDashboard,
+  AlertTriangle, Globe, Wrench, CheckCircle2, LayoutDashboard, Newspaper,
 } from "lucide-react"
 
 import { Hero } from "./sections/Hero"
@@ -17,6 +17,7 @@ import { CausalAnalysis } from "./sections/CausalAnalysis"
 import { TippingPoints } from "./sections/TippingPoints"
 import { NationalPicture } from "./sections/NationalPicture"
 import { HowWeDidThis } from "./sections/HowWeDidThis"
+import { TextualAnalysis } from "./sections/TextualAnalysis"
 import { Conclusions } from "./sections/Conclusions"
 import { Dashboard } from "./sections/Dashboard"
 
@@ -32,6 +33,7 @@ const articleSections = [
   { id: "causal-analysis", label: "Cause & Effect", icon: <GitBranch className="w-4 h-4" /> },
   { id: "tipping-points", label: "Tipping Points", icon: <AlertTriangle className="w-4 h-4" /> },
   { id: "national-picture", label: "National Picture", icon: <Globe className="w-4 h-4" /> },
+  { id: "textual-analysis", label: "Textual Analysis", icon: <Newspaper className="w-4 h-4" /> },
   { id: "methodology", label: "How We Did This", icon: <Wrench className="w-4 h-4" /> },
   { id: "conclusions", label: "Conclusions", icon: <CheckCircle2 className="w-4 h-4" /> },
 ]
@@ -57,9 +59,9 @@ export default function App() {
           <div className="p-6 border-b border-primary/10">
             <div className="flex items-center gap-2 mb-2">
               <Globe2 className="w-6 h-6 text-primary" />
-              <h1 className="font-sans font-bold text-lg text-primary tracking-tight">FIDC</h1>
+              <h1 className="font-sans font-bold text-lg text-primary tracking-tight">AIDER</h1>
             </div>
-            <p className="text-xs font-mono text-primary/60 uppercase tracking-wider">Future Impact of Data Centers</p>
+            <p className="text-xs font-mono text-primary/60 uppercase tracking-wider">AI Data Centers Environmental & Renewable Impact</p>
           </div>
 
           {/* View Tabs */}
@@ -145,6 +147,7 @@ export default function App() {
                 <CausalAnalysis />
                 <TippingPoints />
                 <NationalPicture />
+                <TextualAnalysis />
                 <HowWeDidThis />
                 <Conclusions />
 

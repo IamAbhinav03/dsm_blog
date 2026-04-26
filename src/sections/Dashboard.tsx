@@ -110,7 +110,7 @@ export function Dashboard() {
     <div className="max-w-7xl mx-auto">
       <div className="mb-10">
         <h1 className="text-3xl font-bold font-sans text-primary tracking-tight mb-2">
-          FIDC Dashboard
+          AIDER Dashboard
         </h1>
         <p className="font-serif text-lg text-foreground/70">
           All visualisations from the research pipeline in one view. Each chart shows data for four study 

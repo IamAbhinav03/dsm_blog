@@ -33,9 +33,11 @@ export function HowWeDidThis() {
             <Arrow />
             <PipelineStep step="4" label="run_all.py" desc="10 Training Modules" color="bg-emerald-100 text-emerald-800 border-emerald-200" />
             <Arrow />
-            <PipelineStep step="5" label="analysis/*" desc="9 Analysis Modules" color="bg-amber-100 text-amber-800 border-amber-200" />
+            <PipelineStep step="5" label="main.ipynb" desc="Textual Analysis" color="bg-violet-100 text-violet-800 border-violet-200" />
             <Arrow />
-            <PipelineStep step="6" label="app.py" desc="Streamlit Dashboard" color="bg-violet-100 text-violet-800 border-violet-200" />
+            <PipelineStep step="6" label="analysis/*" desc="9 Analysis Modules" color="bg-amber-100 text-amber-800 border-amber-200" />
+            <Arrow />
+            <PipelineStep step="7" label="app.py" desc="Streamlit Dashboard" color="bg-violet-100 text-violet-800 border-violet-200" />
           </div>
         </div>
       </div>
@@ -150,11 +152,23 @@ export function HowWeDidThis() {
                 <td className="py-2.5 px-4">Electricity demand</td>
                 <td className="py-2.5 px-4 font-mono text-[10px]">n_est=300, depth=5, subsample=0.8</td>
               </tr>
-              <tr>
+              <tr className="border-b border-primary/5">
                 <td className="py-2.5 px-4 font-sans font-semibold text-primary">National Clustering</td>
                 <td className="py-2.5 px-4">K-Means</td>
                 <td className="py-2.5 px-4">State tiers</td>
                 <td className="py-2.5 px-4 font-mono text-[10px]">k=4 (silhouette-optimised)</td>
+              </tr>
+              <tr className="border-b border-primary/5">
+                <td className="py-2.5 px-4 font-sans font-semibold text-primary">Sentiment (VADER)</td>
+                <td className="py-2.5 px-4">Lexicon + Rules</td>
+                <td className="py-2.5 px-4">News sentiment score</td>
+                <td className="py-2.5 px-4 font-mono text-[10px]">Compound avg per article</td>
+              </tr>
+              <tr>
+                <td className="py-2.5 px-4 font-sans font-semibold text-primary">Sentiment (DistilBERT)</td>
+                <td className="py-2.5 px-4">Transformer</td>
+                <td className="py-2.5 px-4">Contextual sentiment</td>
+                <td className="py-2.5 px-4 font-mono text-[10px]">distilbert-sst-2, P(POSITIVE)</td>
               </tr>
             </tbody>
           </table>
@@ -183,6 +197,7 @@ export function HowWeDidThis() {
               <li>• Hardcoded narrative values can drift from config.py</li>
               <li>• No requirements.txt — environment not reproducible</li>
               <li>• Energy shortage classifier disabled (97.8% class imbalance)</li>
+              <li>• Textual data biased towards corporate PR — optimism bias in sentiment scores</li>
             </ul>
           </div>
         </div>
