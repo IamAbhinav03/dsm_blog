@@ -5,15 +5,6 @@ import { useSectionFade } from "@/components/SectionFade";
 import { Code2, AlertTriangle } from "lucide-react";
 
 // The DAG has 12 nodes and 14 directed edges (exact from report Section 5.1)
-const dagNodes = [
-  { id: "renewable_capacity", label: "Renewable Capacity", x: 50, y: 30, color: "#22c55e" },
-  { id: "energy_shortage", label: "Energy Shortage", x: 250, y: 30, color: "#f59e0b" },
-  { id: "aqi", label: "Air Quality (PM2.5)", x: 450, y: 30, color: "#ba1a1a" },
-  { id: "policy_index", label: "Policy Index", x: 50, y: 130, color: "#0ea5e9" },
-  { id: "rainfall", label: "Rainfall", x: 250, y: 200, color: "#0ea5e9" },
-  { id: "groundwater_level", label: "Groundwater Level", x: 450, y: 150, color: "#f59e0b" },
-  { id: "industrial_activity", label: "Industrial Activity", x: 250, y: 120, color: "#64748b" },
-];
 
 // Key causal pathways (exact from report)
 const causalPathways = [

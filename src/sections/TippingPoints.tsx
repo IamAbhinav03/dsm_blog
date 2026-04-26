@@ -5,7 +5,7 @@ import { useSectionFade } from "@/components/SectionFade";
 import { Code2 } from "lucide-react";
 import {
   ResponsiveContainer, ComposedChart, Line, XAxis, YAxis, CartesianGrid,
-  Tooltip as RechartsTooltip, ReferenceLine, Legend, BarChart, Bar, Cell,
+  Tooltip as RechartsTooltip, ReferenceLine, Legend, BarChart, Bar,
 } from "recharts";
 
 // APPROXIMATED: Figure 16 describes "groundwater extraction percentage versus data centre capacity
@@ -87,7 +87,7 @@ export function TippingPoints() {
                 <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#e2e8f0" />
                 <XAxis dataKey="multiplier" axisLine={false} tickLine={false} tick={{ fontSize: 10, fill: "#64748b" }} dy={10} />
                 <YAxis axisLine={false} tickLine={false} tick={{ fontSize: 10, fill: "#64748b" }} domain={[0, 130]} unit="%" />
-                <RechartsTooltip contentStyle={{ borderRadius: 0, border: "1px solid #e2e8f0" }} formatter={(value: number) => [`${value}%`, ""]} />
+                <RechartsTooltip contentStyle={{ borderRadius: 0, border: "1px solid #e2e8f0" }} formatter={(value: any) => [`${value}%`, ""]} />
                 <ReferenceLine y={70} stroke="#f59e0b" strokeDasharray="3 3" label={{ position: "right", value: "Semi-Critical (70%)", fill: "#f59e0b", fontSize: 9 }} />
                 <ReferenceLine y={90} stroke="#ea580c" strokeDasharray="3 3" label={{ position: "right", value: "Critical (90%)", fill: "#ea580c", fontSize: 9 }} />
                 <ReferenceLine y={100} stroke="#ba1a1a" strokeDasharray="3 3" label={{ position: "right", value: "Over-Exploited (100%)", fill: "#ba1a1a", fontSize: 9 }} />
@@ -152,7 +152,7 @@ export function TippingPoints() {
                 <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#e2e8f0" />
                 <XAxis dataKey="state" axisLine={false} tickLine={false} tick={{ fontSize: 10, fill: "#64748b" }} dy={10} />
                 <YAxis axisLine={false} tickLine={false} tick={{ fontSize: 10, fill: "#64748b" }} />
-                <RechartsTooltip contentStyle={{ borderRadius: 0, border: "1px solid #e2e8f0" }} formatter={(value: number) => [`${value.toLocaleString()} MW`, "Untapped Capacity"]} />
+                <RechartsTooltip contentStyle={{ borderRadius: 0, border: "1px solid #e2e8f0" }} formatter={(value: any) => [`${value.toLocaleString()} MW`, "Untapped Capacity"]} />
                 <Bar dataKey="gap" fill="#22c55e" barSize={40} />
               </BarChart>
             </ResponsiveContainer>

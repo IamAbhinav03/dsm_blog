@@ -5,7 +5,7 @@ import { useSectionFade } from "@/components/SectionFade";
 import { AlertTriangle, Code2 } from "lucide-react";
 import {
   ResponsiveContainer, BarChart, Bar, XAxis, YAxis, CartesianGrid,
-  Tooltip as RechartsTooltip, Legend, Cell,
+  Tooltip as RechartsTooltip, Cell,
 } from "recharts";
 
 // APPROXIMATED: The report describes Figure 5 as "simulated change in predicted PM2.5 per state
@@ -116,7 +116,7 @@ export function EnvironmentalImpact() {
                   <CartesianGrid strokeDasharray="3 3" horizontal={false} stroke="#e2e8f0" />
                   <XAxis type="number" axisLine={false} tickLine={false} tick={{ fontSize: 10, fill: "#64748b" }} unit=" µg/m³" />
                   <YAxis dataKey="state" type="category" axisLine={false} tickLine={false} tick={{ fontSize: 11, fill: "#041627", fontWeight: 600 }} width={110} />
-                  <RechartsTooltip cursor={{ fill: "#f8fafc" }} contentStyle={{ borderRadius: 0, border: "1px solid #e2e8f0" }} formatter={(value: number) => [`+${value} µg/m³`, "PM2.5 Δ"]} />
+                  <RechartsTooltip cursor={{ fill: "#f8fafc" }} contentStyle={{ borderRadius: 0, border: "1px solid #e2e8f0" }} formatter={(value: any) => [`+${value} µg/m³`, "PM2.5 Δ"]} />
                   <Bar dataKey="delta" barSize={24}>
                     {pm25ImpactData.map((entry, i) => (
                       <Cell key={i} fill={entry.delta > 5 ? "#ba1a1a" : entry.delta > 3 ? "#f59e0b" : "#22c55e"} />
@@ -145,7 +145,7 @@ export function EnvironmentalImpact() {
                   <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#e2e8f0" />
                   <XAxis dataKey="state" axisLine={false} tickLine={false} tick={{ fontSize: 10, fill: "#64748b" }} dy={10} />
                   <YAxis axisLine={false} tickLine={false} tick={{ fontSize: 10, fill: "#64748b" }} domain={[0, 70]} unit="%" />
-                  <RechartsTooltip contentStyle={{ borderRadius: 0, border: "1px solid #e2e8f0" }} formatter={(value: number) => [`${value}%`, "Grid Stress"]} />
+                  <RechartsTooltip contentStyle={{ borderRadius: 0, border: "1px solid #e2e8f0" }} formatter={(value: any) => [`${value}%`, "Grid Stress"]} />
                   <Bar dataKey="stress" barSize={40}>
                     {gridStressData.map((entry, i) => (
                       <Cell key={i} fill={entry.stress > 45 ? "#ba1a1a" : "#0ea5e9"} />

@@ -1,4 +1,4 @@
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
   ResponsiveContainer, BarChart, Bar, XAxis, YAxis, CartesianGrid,
   Tooltip as RechartsTooltip, RadarChart, PolarGrid, PolarAngleAxis,
@@ -171,7 +171,7 @@ export function Dashboard() {
               <CartesianGrid strokeDasharray="3 3" horizontal={false} stroke="#e2e8f0" />
               <XAxis type="number" axisLine={false} tickLine={false} tick={{ fontSize: 10, fill: "#64748b" }} unit=" µg/m³" />
               <YAxis dataKey="state" type="category" axisLine={false} tickLine={false} tick={{ fontSize: 11, fill: "#041627", fontWeight: 600 }} width={110} />
-              <RechartsTooltip cursor={{ fill: "#f8fafc" }} contentStyle={{ borderRadius: 0, border: "1px solid #e2e8f0" }} formatter={(v: number) => [`+${v} µg/m³`, "PM2.5 Δ"]} />
+              <RechartsTooltip cursor={{ fill: "#f8fafc" }} contentStyle={{ borderRadius: 0, border: "1px solid #e2e8f0" }} formatter={(v: any) => [`+${v} µg/m³`, "PM2.5 Δ"]} />
               <Bar dataKey="delta" barSize={24}>
                 {pm25ImpactData.map((e, i) => <Cell key={i} fill={e.delta > 5 ? "#ba1a1a" : e.delta > 3 ? "#f59e0b" : "#22c55e"} />)}
               </Bar>
@@ -188,7 +188,7 @@ export function Dashboard() {
               <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#e2e8f0" />
               <XAxis dataKey="state" axisLine={false} tickLine={false} tick={{ fontSize: 10, fill: "#64748b" }} dy={10} />
               <YAxis axisLine={false} tickLine={false} tick={{ fontSize: 10, fill: "#64748b" }} domain={[0, 70]} unit="%" />
-              <RechartsTooltip contentStyle={{ borderRadius: 0, border: "1px solid #e2e8f0" }} formatter={(v: number) => [`${v}%`, "Grid Stress"]} />
+              <RechartsTooltip contentStyle={{ borderRadius: 0, border: "1px solid #e2e8f0" }} formatter={(v: any) => [`${v}%`, "Grid Stress"]} />
               <Bar dataKey="stress" barSize={40}>
                 {gridStressData.map((e, i) => <Cell key={i} fill={e.stress > 45 ? "#ba1a1a" : "#0ea5e9"} />)}
               </Bar>
@@ -209,7 +209,7 @@ export function Dashboard() {
               <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#e2e8f0" />
               <XAxis dataKey="year" axisLine={false} tickLine={false} tick={{ fontSize: 10, fill: "#64748b" }} dy={10} />
               <YAxis axisLine={false} tickLine={false} tick={{ fontSize: 10, fill: "#64748b" }} domain={[0, 35]} unit="m" />
-              <RechartsTooltip contentStyle={{ borderRadius: 0, border: "1px solid #e2e8f0" }} formatter={(v: number) => [`${v}m`, ""]} />
+              <RechartsTooltip contentStyle={{ borderRadius: 0, border: "1px solid #e2e8f0" }} formatter={(v: any) => [`${v}m`, ""]} />
               <Area type="monotone" dataKey="Telangana" stroke="none" fill="#f59e0b" fillOpacity={0.08} />
               <Line type="monotone" dataKey="Telangana" stroke="#f59e0b" strokeWidth={2.5} dot={{ r: 3, fill: "#f59e0b", strokeWidth: 0 }} />
               <Line type="monotone" dataKey="Gujarat" stroke="#22c55e" strokeWidth={2} dot={{ r: 3, fill: "#22c55e", strokeWidth: 0 }} />
@@ -247,7 +247,7 @@ export function Dashboard() {
               <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#e2e8f0" />
               <XAxis dataKey="state" axisLine={false} tickLine={false} tick={{ fontSize: 10, fill: "#64748b" }} dy={10} />
               <YAxis axisLine={false} tickLine={false} tick={{ fontSize: 10, fill: "#64748b" }} domain={[0, 35]} unit="pp" />
-              <RechartsTooltip contentStyle={{ borderRadius: 0, border: "1px solid #e2e8f0" }} formatter={(v: number) => [`${v} pp`, "Gap"]} />
+              <RechartsTooltip contentStyle={{ borderRadius: 0, border: "1px solid #e2e8f0" }} formatter={(v: any) => [`${v} pp`, "Gap"]} />
               <Bar dataKey="gap" barSize={40}>
                 {districtDivergenceData.map((e, i) => <Cell key={i} fill={e.gap > 20 ? "#ba1a1a" : e.gap > 12 ? "#f59e0b" : "#0ea5e9"} />)}
               </Bar>
@@ -268,7 +268,7 @@ export function Dashboard() {
               <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#e2e8f0" />
               <XAxis dataKey="multiplier" axisLine={false} tickLine={false} tick={{ fontSize: 10, fill: "#64748b" }} dy={10} />
               <YAxis axisLine={false} tickLine={false} tick={{ fontSize: 10, fill: "#64748b" }} domain={[0, 130]} unit="%" />
-              <RechartsTooltip contentStyle={{ borderRadius: 0, border: "1px solid #e2e8f0" }} formatter={(v: number) => [`${v}%`, ""]} />
+              <RechartsTooltip contentStyle={{ borderRadius: 0, border: "1px solid #e2e8f0" }} formatter={(v: any) => [`${v}%`, ""]} />
               <ReferenceLine y={70} stroke="#f59e0b" strokeDasharray="3 3" />
               <ReferenceLine y={90} stroke="#ea580c" strokeDasharray="3 3" />
               <ReferenceLine y={100} stroke="#ba1a1a" strokeDasharray="3 3" />
@@ -291,7 +291,7 @@ export function Dashboard() {
               <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#e2e8f0" />
               <XAxis dataKey="state" axisLine={false} tickLine={false} tick={{ fontSize: 10, fill: "#64748b" }} dy={10} />
               <YAxis axisLine={false} tickLine={false} tick={{ fontSize: 10, fill: "#64748b" }} />
-              <RechartsTooltip contentStyle={{ borderRadius: 0, border: "1px solid #e2e8f0" }} formatter={(v: number) => [`${v.toLocaleString()} MW`, "Untapped"]} />
+              <RechartsTooltip contentStyle={{ borderRadius: 0, border: "1px solid #e2e8f0" }} formatter={(v: any) => [`${v.toLocaleString()} MW`, "Untapped"]} />
               <Bar dataKey="gap" fill="#22c55e" barSize={40} />
             </BarChart>
           </ResponsiveContainer>

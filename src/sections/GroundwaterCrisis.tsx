@@ -91,7 +91,7 @@ export function GroundwaterCrisis() {
                 <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#e2e8f0" />
                 <XAxis dataKey="year" axisLine={false} tickLine={false} tick={{ fontSize: 10, fill: "#64748b" }} dy={10} />
                 <YAxis axisLine={false} tickLine={false} tick={{ fontSize: 10, fill: "#64748b" }} domain={[0, 35]} unit="m" />
-                <RechartsTooltip contentStyle={{ borderRadius: 0, border: "1px solid #e2e8f0" }} formatter={(value: number) => [`${value}m`, ""]} />
+                <RechartsTooltip contentStyle={{ borderRadius: 0, border: "1px solid #e2e8f0" }} formatter={(value: any) => [`${value}m`, ""]} />
                 {/* Shaded area for DC expansion phase */}
                 <Area type="monotone" dataKey="Telangana" stroke="none" fill="#f59e0b" fillOpacity={0.08} />
                 <Line type="monotone" dataKey="Telangana" stroke="#f59e0b" strokeWidth={2.5} dot={{ r: 3, fill: "#f59e0b", strokeWidth: 0 }} name="Telangana" />
@@ -159,7 +159,7 @@ export function GroundwaterCrisis() {
                   <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#e2e8f0" />
                   <XAxis dataKey="state" axisLine={false} tickLine={false} tick={{ fontSize: 10, fill: "#64748b" }} dy={10} />
                   <YAxis axisLine={false} tickLine={false} tick={{ fontSize: 10, fill: "#64748b" }} domain={[0, 35]} unit="pp" />
-                  <RechartsTooltip contentStyle={{ borderRadius: 0, border: "1px solid #e2e8f0" }} formatter={(value: number) => [`${value} pp`, "Divergence Gap"]} />
+                  <RechartsTooltip contentStyle={{ borderRadius: 0, border: "1px solid #e2e8f0" }} formatter={(value: any) => [`${value} pp`, "Divergence Gap"]} />
                   <Bar dataKey="gap" barSize={40}>
                     {districtDivergenceData.map((entry, i) => (
                       <Cell key={i} fill={entry.gap > 20 ? "#ba1a1a" : entry.gap > 12 ? "#f59e0b" : "#0ea5e9"} />

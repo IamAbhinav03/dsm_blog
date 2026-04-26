@@ -1,7 +1,7 @@
 import { Separator } from "@/components/ui/separator";
 import { Card, CardContent } from "@/components/ui/card";
 import { useSectionFade } from "@/components/SectionFade";
-import { Zap, ShieldAlert, Droplet, ArrowRightCircle, CheckCircle2, AlertTriangle } from "lucide-react";
+import { Zap, Droplet, ArrowRightCircle, AlertTriangle } from "lucide-react";
 
 const recommendations = [
   {
