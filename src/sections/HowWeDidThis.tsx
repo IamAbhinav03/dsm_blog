@@ -14,9 +14,9 @@ export function HowWeDidThis() {
       </div>
 
       <p className="text-lg font-serif leading-loose mb-8 text-foreground/90">
-        This section is for readers who want to understand — or replicate — the full technical pipeline. 
-        We built a 20-module system that ingests raw government data, cleans and unifies it, trains 
-        predictive models, runs causal and scenario analyses, and produces the figures and tables shown 
+        This section is for readers who want to understand — or replicate — the full technical pipeline.
+        We built a 20-module system that ingests raw government data, cleans and unifies it, trains
+        predictive models, runs causal and scenario analyses, and produces the figures and tables shown
         throughout this article.
       </p>
 
@@ -83,7 +83,7 @@ export function HowWeDidThis() {
         </div>
       </div>
 
-      {/* The Name Canonicalisation Problem */}
+      {/* The Name Canonicalisation Problem
       <div className="mb-8">
         <h3 className="font-sans text-xl font-bold text-primary mb-4">The Most Important Step You'd Never Think Of</h3>
         <p className="font-serif text-base leading-relaxed mb-4 text-foreground/80">
@@ -100,7 +100,7 @@ export function HowWeDidThis() {
           "A.P."           → Row 3  ← And again!<br/>
           "A P"            → Row 4  ← Four entries for one state.
         </div>
-      </div>
+      </div> */}
 
       {/* Model Summary Table */}
       <div className="mb-8">
@@ -192,10 +192,7 @@ export function HowWeDidThis() {
           <div className="border border-red-200 bg-red-50 p-5">
             <p className="font-mono text-[10px] font-bold text-red-700 uppercase tracking-widest mb-3">Weaknesses</p>
             <ul className="space-y-2 text-sm font-serif text-red-900/80">
-              <li>• Preprocessing not orchestrated in run_all.py — stale data risk</li>
-              <li>• Path-case duality (Data/ vs data/) breaks on Linux/macOS</li>
-              <li>• Hardcoded narrative values can drift from config.py</li>
-              <li>• No requirements.txt — environment not reproducible</li>
+              <li>• Lack of Concrete Data</li>
               <li>• Energy shortage classifier disabled (97.8% class imbalance)</li>
               <li>• Textual data biased towards corporate PR — optimism bias in sentiment scores</li>
             </ul>
@@ -204,7 +201,7 @@ export function HowWeDidThis() {
       </div>
 
       {/* Reproducibility Table */}
-      <div>
+      {/* <div>
         <h3 className="font-sans text-xl font-bold text-primary mb-4">Reproducibility Scorecard</h3>
         <div className="overflow-x-auto">
           <table className="w-full text-sm border border-primary/10">
@@ -244,7 +241,7 @@ export function HowWeDidThis() {
             </tbody>
           </table>
         </div>
-      </div>
+      </div> */}
     </section>
   );
 }

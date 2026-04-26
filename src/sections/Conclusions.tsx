@@ -6,38 +6,32 @@ import { Zap, Droplet, ArrowRightCircle, AlertTriangle } from "lucide-react";
 const recommendations = [
   {
     priority: 1,
-    title: "Integrate preprocessing into the pipeline",
-    description: "Add catfish.py as a gated Stage 0 in run_all.py with hash-based freshness checks on raw input files. This eliminates the stale-data propagation risk — the single most severe operational risk.",
+    title: "Mandate District-Level Resource Assessments",
+    description: "State-level readiness aggregates systematically mask localised groundwater crises. Siting approvals must be gated on district-level water and energy availability rather than statewide averages.",
     severity: "Critical",
   },
   {
     priority: 2,
-    title: "Unify all file paths through config.py",
-    description: "Define a single canonical root (data/) and resolve all downstream paths relative to it. The Data/ vs data/ duality causes silent failures on case-sensitive filesystems.",
+    title: "Enforce Closed-Loop Cooling in Vulnerable States",
+    description: "In states like Telangana and Andhra Pradesh where aquifers are approaching semi-critical status under current trajectories, open-loop water cooling should be restricted for new hyperscale facilities.",
     severity: "Critical",
   },
   {
     priority: 3,
-    title: "Pin the dependency environment",
-    description: "Generate a requirements.txt or conda environment.yml. Without environment pinning, a collaborator on a different machine may obtain different results.",
+    title: "Require Co-located Energy Storage",
+    description: "To prevent data centers from falling back on coal-heavy grid baseloads during evening hours, developers in high-renewable states (like Gujarat) must integrate long-duration battery storage alongside solar capacity.",
     severity: "High",
   },
   {
     priority: 4,
-    title: "Enforce a held-out test partition",
-    description: "Implement a global train/validation/test split at the data loading stage. Log split indices to a JSON artifact and enforce that no feature engineering step uses test-partition observations.",
+    title: "Cap Capacity at Groundwater Tipping Points",
+    description: "Use the pipeline's scenario simulations to set hard, non-negotiable capacity limits (e.g., 2× planned capacity for Telangana) to prevent irreversible aquifer depletion.",
     severity: "High",
   },
   {
     priority: 5,
-    title: "Orchestrate the causal analysis module",
-    description: "Add a RUN_CAUSAL flag to config.py and conditionally invoke causal_analysis.py within run_all.py.",
-    severity: "Medium",
-  },
-  {
-    priority: 6,
-    title: "Formalise parallel trends testing",
-    description: "Add a pre-trend event-study regression before publishing causal estimates. This is a necessary (though not sufficient) check for selection bias.",
+    title: "Look Beyond Corporate Sentiment",
+    description: "When gauging public and industry readiness, policymakers must separate optimistic corporate PR from ground-level environmental compliance and resource stress signals, which often precede physical tipping points.",
     severity: "Medium",
   },
 ];
@@ -73,9 +67,9 @@ export function Conclusions() {
               <div>
                 <h3 className="font-sans text-2xl font-bold text-primary mb-3">Energy Transition Arbitrage</h3>
                 <p className="font-serif text-lg leading-relaxed text-foreground/90">
-                  The temporal mismatch between renewable energy generation peaks and flat data center loads 
-                  presents a major systemic risk. Each state has significant untapped renewable capacity — 
-                  Gujarat alone has over 12,000 MW of headroom — but without on-site long-duration energy 
+                  The temporal mismatch between renewable energy generation peaks and flat data center loads
+                  presents a major systemic risk. Each state has significant untapped renewable capacity —
+                  Gujarat alone has over 12,000 MW of headroom — but without on-site long-duration energy
                   storage, data centers will fall back onto coal-heavy grid baseloads during evening hours.
                 </p>
               </div>
@@ -90,9 +84,9 @@ export function Conclusions() {
               <div>
                 <h3 className="font-sans text-2xl font-bold text-destructive mb-3">Groundwater: The Non-Negotiable Constraint</h3>
                 <p className="font-serif text-lg leading-relaxed text-foreground/90">
-                  Telangana crosses the semi-critical groundwater threshold at current planned capacity and 
-                  enters over-exploitation at just 2× planned capacity. Unlike energy grids, depleted 
-                  aquifers do not recover on human timescales. This constraint is not negotiable through 
+                  Telangana crosses the semi-critical groundwater threshold at current planned capacity and
+                  enters over-exploitation at just 2× planned capacity. Unlike energy grids, depleted
+                  aquifers do not recover on human timescales. This constraint is not negotiable through
                   technology — it requires either closed-loop cooling systems or hard capacity caps.
                 </p>
               </div>
@@ -107,8 +101,8 @@ export function Conclusions() {
               <div>
                 <h3 className="font-sans text-2xl font-bold text-amber-700 mb-3">State Averages Hide District Crises</h3>
                 <p className="font-serif text-lg leading-relaxed text-foreground/90">
-                  Data centre siting decisions based on state-level aggregates systematically underestimate 
-                  localised risk. In Telangana, the gap between the state average and the worst-hit district 
+                  Data centre siting decisions based on state-level aggregates systematically underestimate
+                  localised risk. In Telangana, the gap between the state average and the worst-hit district
                   is 28 percentage points. Decision-makers must use district-level data, not state averages.
                 </p>
               </div>
@@ -140,7 +134,7 @@ export function Conclusions() {
       <div className="bg-[#041627] text-white p-12 text-center">
         <h3 className="font-sans text-2xl font-bold mb-4">Read the Full Technical Report</h3>
         <p className="font-serif text-sm text-white/70 mb-6 max-w-2xl mx-auto">
-          This article is a layman-readable summary. The full 44-page technical report includes complete 
+          This article is a layman-readable summary. The full 44-page technical report includes complete
           hyperparameter tables, data flow matrices, formal equation derivations, and all 40+ output figures.
         </p>
         <p className="font-mono text-xs text-white/40 mb-6">
