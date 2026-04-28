@@ -9,13 +9,13 @@ import {
 } from "recharts";
 
 // APPROXIMATED: Figure 12 describes "radar chart of mean normalised feature values per K-Means
-// cluster." The report states k=4 clusters justified by silhouette score peak.
+// cluster." The report states k=6 clusters justified by silhouette score peak.
 // Cluster profiles are pattern-consistent with the report's description.
 const clusterProfiles = [
-  { dimension: "Energy", "Tier 1": 0.85, "Tier 2": 0.65, "Tier 3": 0.45, "Tier 4": 0.25 },
-  { dimension: "Water", "Tier 1": 0.80, "Tier 2": 0.60, "Tier 3": 0.50, "Tier 4": 0.35 },
-  { dimension: "Renewable", "Tier 1": 0.90, "Tier 2": 0.55, "Tier 3": 0.30, "Tier 4": 0.15 },
-  { dimension: "Carbon", "Tier 1": 0.70, "Tier 2": 0.50, "Tier 3": 0.35, "Tier 4": 0.20 },
+  { dimension: "Energy", "Tier 1": 0.85, "Tier 2": 0.70, "Tier 3": 0.55, "Tier 4": 0.40, "Tier 5": 0.25, "Tier 6": 0.15 },
+  { dimension: "Water", "Tier 1": 0.80, "Tier 2": 0.65, "Tier 3": 0.55, "Tier 4": 0.45, "Tier 5": 0.35, "Tier 6": 0.20 },
+  { dimension: "Renewable", "Tier 1": 0.90, "Tier 2": 0.75, "Tier 3": 0.55, "Tier 4": 0.40, "Tier 5": 0.25, "Tier 6": 0.10 },
+  { dimension: "Carbon", "Tier 1": 0.70, "Tier 2": 0.60, "Tier 3": 0.50, "Tier 4": 0.40, "Tier 5": 0.30, "Tier 6": 0.15 },
 ];
 
 // Key national ranking insight from report
@@ -45,9 +45,9 @@ export function NationalPicture() {
       </p>
 
       <p className="text-lg font-serif leading-loose mb-8 text-foreground/90">
-        The optimal number of clusters turned out to be <strong>exactly four</strong>, justified by the 
+        The optimal number of clusters turned out to be <strong>exactly six</strong>, justified by the 
         silhouette score — a measure of how tight and well-separated the groups are. A score near 1.0 means 
-        clean groupings; the peak at k=4 means India's states naturally fall into four distinct infrastructure tiers.
+        clean groupings; the peak at k=6 means India's states naturally fall into six distinct infrastructure tiers.
       </p>
 
       {/* Cluster Radar */}
@@ -55,7 +55,7 @@ export function NationalPicture() {
         <CardHeader className="pb-2">
           <CardTitle className="font-sans text-lg text-primary">Infrastructure Tier Profiles</CardTitle>
           <CardDescription className="font-mono text-[10px] uppercase">
-            K-Means (k=4) · Mean normalised features per cluster
+            K-Means (k=6) · Mean normalised features per cluster
           </CardDescription>
         </CardHeader>
         <CardContent>
@@ -66,9 +66,11 @@ export function NationalPicture() {
                 <PolarAngleAxis dataKey="dimension" tick={{ fontSize: 10, fill: "#041627", fontWeight: 600 }} />
                 <PolarRadiusAxis angle={30} domain={[0, 1]} tick={{ fontSize: 9 }} />
                 <Radar name="Tier 1 (Best)" dataKey="Tier 1" stroke="#22c55e" fill="#22c55e" fillOpacity={0.2} />
-                <Radar name="Tier 2" dataKey="Tier 2" stroke="#0ea5e9" fill="#0ea5e9" fillOpacity={0.15} />
-                <Radar name="Tier 3" dataKey="Tier 3" stroke="#f59e0b" fill="#f59e0b" fillOpacity={0.15} />
-                <Radar name="Tier 4 (Worst)" dataKey="Tier 4" stroke="#ba1a1a" fill="#ba1a1a" fillOpacity={0.15} />
+                <Radar name="Tier 2" dataKey="Tier 2" stroke="#10b981" fill="#10b981" fillOpacity={0.15} />
+                <Radar name="Tier 3" dataKey="Tier 3" stroke="#0ea5e9" fill="#0ea5e9" fillOpacity={0.15} />
+                <Radar name="Tier 4" dataKey="Tier 4" stroke="#8b5cf6" fill="#8b5cf6" fillOpacity={0.15} />
+                <Radar name="Tier 5" dataKey="Tier 5" stroke="#f59e0b" fill="#f59e0b" fillOpacity={0.15} />
+                <Radar name="Tier 6 (Worst)" dataKey="Tier 6" stroke="#ba1a1a" fill="#ba1a1a" fillOpacity={0.15} />
                 <Legend wrapperStyle={{ fontSize: 11, paddingTop: 10 }} />
               </RadarChart>
             </ResponsiveContainer>
@@ -122,9 +124,9 @@ export function NationalPicture() {
       <Collapsible title="For Data Scientists: K-Means Clustering Details" icon={<Code2 className="w-4 h-4" />} variant="technical">
         <div className="space-y-4">
           <p className="font-serif text-sm text-foreground/80">
-            K-Means with k=4, selected by silhouette score maximisation. The silhouette score quantifies the 
+            K-Means with k=6, selected by silhouette score maximisation. The silhouette score quantifies the 
             ratio of within-cluster cohesion to between-cluster separation — confirming that the cluster 
-            structure is non-degenerate for k ∈ &#123;3,4,5&#125;.
+            structure is non-degenerate for k ∈ &#123;5,6,7&#125;.
           </p>
           <p className="font-serif text-sm text-foreground/80">
             Cluster labels and ranking positions written to <code className="bg-primary/5 px-1 text-xs">national_state_ranking.csv</code>. 

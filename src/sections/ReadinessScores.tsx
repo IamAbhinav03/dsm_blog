@@ -14,20 +14,20 @@ import {
 // Exact scores are not given in the report text — these values are pattern-consistent
 // approximations based on Figure 1 and Figure 2 descriptions.
 const readinessScores = [
-  { state: "Gujarat", score: 0.58, tier: "Moderate" },
-  { state: "Andhra Pradesh", score: 0.47, tier: "Moderate" },
-  { state: "Telangana", score: 0.42, tier: "Moderate" },
-  { state: "West Bengal", score: 0.31, tier: "Unprepared" },
+  { state: "Gujarat", score: 0.478, tier: "Moderate" },
+  { state: "Andhra Pradesh", score: 0.641, tier: "Moderate" },
+  { state: "Telangana", score: 0.33, tier: "Moderate" },
+  { state: "West Bengal", score: 0.110, tier: "Unprepared" },
 ];
 
 // APPROXIMATED: Radar sub-dimensions derived from report's qualitative Figure 2 description:
 // "West Bengal contracts sharply on the carbon axis" and Gujarat has "highest renewable penetration".
 // Normalised to [0, 1] scale as described in the report.
 const radarData = [
-  { subject: "Energy", Gujarat: 0.70, "Andhra Pradesh": 0.55, Telangana: 0.60, "West Bengal": 0.45 },
-  { subject: "Water", Gujarat: 0.65, "Andhra Pradesh": 0.50, Telangana: 0.30, "West Bengal": 0.40 },
-  { subject: "Renewable", Gujarat: 0.85, "Andhra Pradesh": 0.55, Telangana: 0.35, "West Bengal": 0.25 },
-  { subject: "Carbon", Gujarat: 0.45, "Andhra Pradesh": 0.40, Telangana: 0.50, "West Bengal": 0.15 },
+  { subject: "Energy", Gujarat: 0.75, "Andhra Pradesh": 0.56, Telangana: 0.32, "West Bengal": 0.0 },
+  { subject: "Water", Gujarat: 0.2, "Andhra Pradesh": 1.0, Telangana: 0.36, "West Bengal": 0.33 },
+  { subject: "Renewable", Gujarat: 1.0, "Andhra Pradesh": 0.35, Telangana: 0.18, "West Bengal": 0.0 },
+  { subject: "Carbon", Gujarat: 0.91, "Andhra Pradesh": 0.72, Telangana: 1.0, "West Bengal": 0.0 },
 ];
 
 const TIER_COLORS: Record<string, string> = {
